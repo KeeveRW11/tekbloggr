@@ -19,14 +19,14 @@ User.init(
         },
         username: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
             unique: true
         },
         password: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [4]
+                len: [8]
             }
         }
     },
@@ -55,4 +55,4 @@ User.init(
     }
 );
 
-module.exports = Users;
+module.exports = User;
