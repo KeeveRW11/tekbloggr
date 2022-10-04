@@ -23,7 +23,7 @@ router.get('/:id', (req, res) => {
         include: [
             {
                 model: Post,
-                attributes: ['id', 'title', 'post_url', 'created_at']
+                attributes: ['id', 'title', 'post_text', 'created_at']
             },
             {
                 model: Comment,
@@ -55,7 +55,7 @@ router.get('/:id', (req, res) => {
         });
 });
 
-router.post('/', /*withAuth,*/ (req, res) => {
+router.post('/', withAuth, (req, res) => {
     User.create({
         username: req.body.username,
         password: req.body.password
@@ -75,7 +75,7 @@ router.post('/', /*withAuth,*/ (req, res) => {
     });
 });
 
-router.post('/login', /*withAuth,*/ (req, res) => {
+router.post('/login', withAuth, (req, res) => {
     User.findOne({
       where: {
         email: req.body.username
@@ -104,7 +104,7 @@ router.post('/login', /*withAuth,*/ (req, res) => {
     });
 });
 
-router.post('/logout', /*withAuth,*/ (req, res) => {
+router.post('/logout', withAuth, (req, res) => {
     if(req.session.loggedIn) {
         req.session.destroy(() => {
             res.status(204).end();
