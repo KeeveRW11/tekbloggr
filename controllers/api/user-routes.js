@@ -32,12 +32,6 @@ router.get('/:id', (req, res) => {
                   model: Post,
                   attributes: ['title']
                 }
-            },
-            {
-                model: Post,
-                attributes: ['title'],
-                through: Vote,
-                as: 'voted_posts'
             }
         ]
     })
@@ -55,7 +49,7 @@ router.get('/:id', (req, res) => {
         });
 });
 
-router.post('/', withAuth, (req, res) => {
+router.post('/', /*withAuth,*/ (req, res) => {
     User.create({
         username: req.body.username,
         password: req.body.password
@@ -75,10 +69,10 @@ router.post('/', withAuth, (req, res) => {
     });
 });
 
-router.post('/login', withAuth, (req, res) => {
+router.post('/login', /*withAuth,*/ (req, res) => {
     User.findOne({
       where: {
-        email: req.body.username
+        username: req.body.username
       }
     }).then(dbUserData => {
       if (!dbUserData) {

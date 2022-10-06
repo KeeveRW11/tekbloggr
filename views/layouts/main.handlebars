@@ -14,12 +14,16 @@
       <h1>
         <a href="/">Tek Bloggr</a>
       </h1>        
-      <nav>
-        {{#if loggedIn}} <a href="/dashboard">dashboard</a>
-        <button id="logout" class="btn-no-style">logout</button>
+      <nav class="navbar"> 
+        {{#if loggedIn}}
+        <ul>
+          <li class="li-inline nav-item"><a href="/">Home</a></li>
+          <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
+          
+          <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
+        </ul>
         {{else}}
-        <a href="/login">login</a>
-        {{/if}}
+        <li class="li-inline nav-item"><a href="/login">Login</a></li>
       </nav>
     </header>
     <main>

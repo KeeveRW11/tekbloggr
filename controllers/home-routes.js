@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
         'id',
         'post_text',
         'title',
-        'created_at',
+        'created_at'
       ],
       include: [
         {
@@ -30,9 +30,8 @@ router.get('/', (req, res) => {
         // pass a single post object into the homepage template
         //console.log(dbPostData[0]);
         const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('homepage', { 
-          posts,
-          loggedIn: req.session.loggedIn
+        res.render('homepage', { posts
+          //loggedIn: req.session.loggedIn
         });
       })
       .catch(err => {
@@ -42,16 +41,19 @@ router.get('/', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    if(req.session.loggedIn) {
+    /*if(req.session.loggedIn) {
         res.redirect('/');
         return;
-    }
-
+    }*/
     res.render('login');
 });
 
 router.get('/signup', (req, res) => {
-    res.render('signup');
+  if(req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  res.render('signup');
 });
 
 router.get('/post/:id', (req, res) => {
