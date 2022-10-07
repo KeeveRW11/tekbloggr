@@ -13,7 +13,8 @@
     <header>
       <h1>
         <a href="/">Tek Bloggr</a>
-      </h1>        
+      </h1>       
+
       <nav class="navbar"> 
         {{#if loggedIn}}
         <ul>
@@ -26,6 +27,7 @@
         <li class="li-inline nav-item"><a href="/login">Login</a></li>
         {{/if}}
       </nav>
+      
     </header>
     <main>
       {{{ body }}}
@@ -38,6 +40,7 @@
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
   {{/if}}
+
 </body>
 
 </html>

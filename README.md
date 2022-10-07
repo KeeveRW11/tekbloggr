@@ -1,8 +1,35 @@
 # tekbloggr
 
-AS A developer who writes about tech
-I WANT a CMS-style blog site
-SO THAT I can publish articles, blog posts, and my thoughts and opinions
+  ## Table of Contents
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Contribution Guidelines](#contribution)
+  * [Test](#test)
+  * [License](#license)
+  * [For More Details](#questions)
+
+  ## Description
+  AS A developer who writes about tech
+  I WANT a CMS-style blog site
+  SO THAT I can publish articles, blog posts, and my thoughts and opinions.
+  ## Installation 
+  This app requires node.js, express.js sequelize and dotenv. As a user you will be able to log in and start making post and adding comments to post. The application using express-session to save login sessions and bcrypt for authentication security.
+  ## Usage 
+  This app can be used to create text post and make comments on your post and others. The full functionality requires that you create a profile and be logged in.
+  ## Contribution Guidelines
+  Please contact below for further instructions if required.
+  ## Test
+  Try creating your own profile to see the app in full action.
+  ## License
+  ![Unlicensed](https://img.shields.io/badge/license-Unlicense-blue.svg)
+  ## For More Details
+  Contact me:
+  Github:[https://github.com/KeeveRW11/tekbloggr](https://github.com/KeeveRW11)
+  Email:[keevewhyte+github@gmail.com](keevewhyte+github@gmail.com)
+  Heroku: 
+
+# User Story
 
 GIVEN a CMS-style blog site
 WHEN I visit the site for the first time
